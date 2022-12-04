@@ -1,0 +1,35 @@
+﻿<Window x:Class="RevitAPITraining72.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RevitAPITraining72"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="300" Title="Создание листов">
+    <StackPanel>
+        <Label Content="Основная надпись"
+               Margin="5"/>
+        <ComboBox ItemsSource="{Binding TitleBlocks}"
+                  SelectedValue="{Binding SelectedTitleBlock}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Виды для листов"
+               Margin="5"/>
+        <ComboBox ItemsSource="{Binding Views}"
+                  SelectedValue="{Binding SelectedView}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Количество листов"
+               Margin="5"/>
+        <TextBox Text="{Binding ListCount}"
+                 Margin="5"/>
+        <Label Content="Надпись Designed By"
+               Margin="5"/>
+        <TextBox Text="{Binding TextDesignedBy}"
+                 Margin="5"/>
+        <Button Content="Создать листы"
+                Command="{Binding CreateLists}"
+                Margin="5"
+                Padding="5"/>
+    </StackPanel>
+</Window>
